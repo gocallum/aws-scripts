@@ -1,0 +1,67 @@
+# AWS Scripts
+
+This repository provides utility scripts to automate AWS operations. The primary focus is the EC2 instance creation script, tailored for users starting out on AWS or aiming for rapid instance deployment for development purposes.
+
+## Prerequisites
+
+- Ensure you have the [AWS CLI](https://aws.amazon.com/cli/) installed and configured with the appropriate AWS credentials.
+- [Git](https://git-scm.com/) should be installed if you intend to clone this repository.
+
+## EC2 Creation Script
+
+This script automates the process of setting up an EC2 instance, suitable for running Node.js applications. 
+
+### Features
+- **Key Pair Management:** The script first checks if the necessary key pair exists. If not, it will create one.
+- **Security Group Configuration:** It configures a security group to allow SSH (port 22) and port 3000 (typical for Node.js applications).
+- **EC2 Instance Creation:** The script launches an EC2 instance using a specified AMI in the `us-east-1` region.
+- **Instance Tagging:** The launched instance will be tagged with the name "mybootcamp-instance" for easy identification.
+
+### Usage
+
+1. Clone this repository:
+```bash
+git clone https://github.com/gocallum/aws-scripts.git
+```
+
+Navigate to the cloned directory:
+
+```bash
+cd aws-scripts
+```
+
+Execute the EC2 creation script:
+
+For Windows:
+
+```bash
+create-ec2.bat
+```
+
+For macOS:
+
+```bash
+chmod +x create-ec2.sh
+./create-ec2.sh
+```
+
+### Output and Results
+
+PEM File Location: The generated key pair (PEM file) will be saved in the directory from which you run the script. It's crucial to keep this file secure, as it will be required to SSH into the created EC2 instance.
+
+### Console Feedback: 
+The script will provide feedback in the console, indicating the stages of the setup process and any errors encountered.
+
+### Additional Notes
+Always remember to terminate or stop the EC2 instances when they're not in use to prevent unnecessary charges.
+
+Keep your PEM files secure and never expose them. They are the keys to accessing your EC2 instances.
+
+### Contributing
+
+Contributions, suggestions, and improvements are always welcome. Feel free to send a pull request or raise an issue.
+
+### Author
+
+Callum Bir
+gocallum 
