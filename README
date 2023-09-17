@@ -38,6 +38,13 @@ For Windows:
 create-ec2.bat
 ```
 
+Windows users should use the create-ec2.bat script. It is designed to work well with the Command Prompt.
+
+To use the create-ec2.bat script, simply double-click on it or run it via the Command Prompt.
+
+Alternatively, if you have Git installed on your Windows machine, you likely have Git Bash bundled with it. You can use this shell to run the bash version of the script (create-ec2.sh).
+
+
 For macOS:
 
 ```bash
@@ -45,9 +52,80 @@ chmod +x create-ec2.sh
 ./create-ec2.sh
 ```
 
+For macOS Catalina and later version:
+
+In macOS Catalina and later versions, the default shell was changed from the Bourne shell (bash) to the Z shell (zsh). Due to this shift and potential compatibility issues, macOS users should use the create-ec2.zsh script instead of the create-ec2.sh (bash) script.
+
+To use the create-ec2.zsh script:
+
 ### Output and Results
 
 PEM File Location: The generated key pair (PEM file) will be saved in the directory from which you run the script. It's crucial to keep this file secure, as it will be required to SSH into the created EC2 instance.
+
+If you do not have Git installed, use the instructions to install Git on both Windows and macOS:
+
+## Installing Git on Windows:
+
+1. **Download the Installer**:
+   Go to the official Git website at [https://git-scm.com](https://git-scm.com/). On the main page, there will be a download link for Windows. Click on it to download the installer.
+
+2. **Run the Installer**:
+   Locate the downloaded executable (`.exe`) file, typically found in your `Downloads` folder, and double-click it to start the installation process.
+
+3. **Installation Wizard**:
+   The Git Setup wizard will appear:
+   - Follow the prompts by clicking 'Next'.
+   - You can use the default settings for most installations. However, take note on the "Select Components" screen: ensure that 'Git Bash Here' is selected if you want to add the context menu option.
+   - On the “Choosing the default editor used by Git” screen, you can choose an editor, or leave it at the default.
+   - For “Adjusting your PATH environment”, the recommended option is “Use Git from the Windows Command Prompt”.
+   - Continue with the installation. Once finished, click 'Finish'.
+
+4. **Verify Installation**:
+   Open a Command Prompt or PowerShell window and type:
+   ```
+   git --version
+   ```
+   This should display the version of Git installed, indicating that the installation was successful.
+
+5. **Additional Tool (Optional)**:
+   For a graphical interface, you might consider installing [GitHub Desktop](https://desktop.github.com/).
+
+## Installing Git on macOS:
+
+1. **Using Homebrew** (Recommended if you have Homebrew installed):
+
+   - Open Terminal.
+   - If you haven’t installed Homebrew yet, visit [https://brew.sh/](https://brew.sh/) and follow the installation instructions.
+   - Once Homebrew is installed, update it and install Git with the following commands:
+     ```
+     brew update
+     brew install git
+     ```
+
+2. **Download and Install Git directly**:
+
+   - Go to the official Git website at [https://git-scm.com](https://git-scm.com/).
+   - On the main page, you’ll see a download link for macOS. Click on it.
+   - Open the downloaded `.dmg` file.
+   - Drag the Git application icon into the Applications folder to complete the installation.
+
+3. **Verify Installation**:
+   
+   Open Terminal and type:
+   ```
+   git --version
+   ```
+   This should display the version of Git installed.
+
+4. **Configure Git** (Optional but Recommended):
+
+   After installation, it's a good idea to set your username and email. This information will be used for every commit you make:
+   ```
+   git config --global user.name "Your Name"
+   git config --global user.email "youremail@example.com"
+   ```
+
+Remember, Git might also be pre-installed on some macOS versions. Always check the version before attempting a fresh installation.
 
 ### Console Feedback: 
 The script will provide feedback in the console, indicating the stages of the setup process and any errors encountered.
